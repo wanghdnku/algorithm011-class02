@@ -1,15 +1,15 @@
 # WEEK 1: 列表、栈和队列
 
-- [1. 列表（List）](#1-列表（List）)
-  - [1.1 数组（ArrayList）](#11-数组（ArrayList）)
-  - [1.2 链表（LinkedList）](#12-链表（LinkedList）)
+- [1. 列表 List](#1-列表-List)
+  - [1.1 数组 ArrayList](#11-数组-ArrayList)
+  - [1.2 链表 LinkedList](#12-链表-LinkedList)
   - [1.3 列表总结](#13-列表总结)
-- [2. 栈（Stack）](#2-栈（Stack）)
+- [2. 栈 Stack](#2-栈-Stack)
   - [2.1 栈的定义](#21-栈的定义)
   - [2.2 使用 ArrayList 实现栈](#22-使用-ArrayList-实现栈)
   - [2.3 使用 LinkedList 实现栈](#23-使用-LinkedList-实现栈)
   - [2.4 栈的总结](#24-栈的总结)
-- [3. 队列（Queue）](#3-队列（Queue）)
+- [3. 队列-Queue](#3-队列-Queue)
   - [3.1 队列的定义](#31-队列的定义)
   - [3.2 使用 ArrayList 实现队列](#32-使用-ArrayList-实现队列)
   - [3.3 克服 ArrayQueue 的弊端](#33-克服-ArrayQueue-的弊端)
@@ -17,7 +17,7 @@
   - [3.5 克服 LinkedQueue 的弊端](#35-克服-LinkedQueue-的弊端)
   - [3.6 队列总结](#36-队列总结)
 
-## 1. 列表（List）
+## 1. 列表 List
 
 首先，用协议规范一个列表的操作：
 
@@ -50,7 +50,7 @@ protocol List {
 
 列表的操作涵盖了常用的访问、查找、插入、删除，以及判空操作。
 
-### 1.1 数组（ArrayList）
+### 1.1 数组 ArrayList
 
 > 数组（Array）是一种**线性表**数据结构。它用一组**连续的内存空间**，来存储一组具有**相同类型**的数据。
 
@@ -210,7 +210,7 @@ public class ArrayList<T> {
 
 在删除元素触发缩容时，并没有采用 resizeFactor 作为系数，而是在容量变为之前的 (1 / resizeFactor ^ 2) 时，进行缩容，理由是为了防止连续的添加、删除操作造成的频繁容量变更，造成复杂度震荡。
 
-### 1.2 链表（LinkedList）
+### 1.2 链表 LinkedList
 
 相比数组，链表是一种稍微复杂一点的数据结构。数组需要一块连续的内存空间来存储，对内存的要求比较高。而链表恰恰相反，它并不需要一块连续的内存空间，它通过“指针”将一组**零散的内存块**串联起来使用。
 
@@ -369,7 +369,7 @@ LinkedList 总结：
 | ArrayList       | O(1)       | O(N)       | O(N)        | O(N)       |
 | LinkedList      | O(N)       | O(N)       | O(1)        | O(1)       |
 
-## 2. 栈（Stack）
+## 2. 栈 Stack
 
 ### 2.1 栈的定义
 
@@ -483,7 +483,7 @@ public class LinkedStack<T: Equatable>: Stack {
 | ArrayStack      | O(N)       | O(N)       | O(1)        | O(1)       |
 | LinkedStack     | O(1)       | O(N)       | O(1)        | O(1)       |
 
-## 3. 队列（Queue）
+## 3. 队列 Queue
 
 ### 3.1 队列的定义
 
