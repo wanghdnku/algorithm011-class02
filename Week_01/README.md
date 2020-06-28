@@ -1,5 +1,23 @@
 # WEEK 1: 列表、栈和队列
 
+- [WEEK 1: 列表、栈和队列](#week-1---------)
+  * [1. 列表（List）](#1----list-)
+    + [1.1 数组（ArrayList）](#11----arraylist-)
+    + [1.2 链表（LinkedList）](#12----linkedlist-)
+    + [1.3 列表总结](#13-----)
+  * [2. 栈（Stack）](#2---stack-)
+    + [2.1 栈的定义](#21-----)
+    + [2.2 使用 ArrayList 实现栈](#22----arraylist----)
+    + [2.3 使用 LinkedList 实现栈](#23----linkedlist----)
+    + [2.4 栈的总结](#24-----)
+  * [3. 队列（Queue）](#3----queue-)
+    + [3.0 队列的定义](#30------)
+    + [3.1 使用 ArrayList 实现队列](#31----arraylist-----)
+    + [3.2 克服 ArrayQueue 的弊端](#32----arrayqueue----)
+    + [3.3 使用 LinkedList 实现队列](#33----linkedlist-----)
+    + [3.4 克服 LinkedQueue 的弊端](#34----linkedqueue----)
+    + [3.5 队列总结](#35-----)
+
 ## 1. 列表（List）
 
 首先，用协议规范一个列表的操作：
@@ -738,7 +756,3 @@ class DualLinkedQueue<T: Equatable>: Queue {
 | CircularQueue   | O(N)       | O(N)       | O(1)        | O(1)       |
 | LinkedQueue     | O(N)       | O(N)       | O(1)        | O(1)       |
 | DualLinkedQueue | O(N)       | O(N)       | O(1)        | O(1)       |
-
-## 4. 双端队列（Deque）
-
-待续
