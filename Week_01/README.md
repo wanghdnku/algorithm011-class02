@@ -1,22 +1,21 @@
 # WEEK 1: 列表、栈和队列
 
-- [WEEK 1: 列表、栈和队列](#week-1---------)
-  * [1. 列表（List）](#1----list-)
-    + [1.1 数组（ArrayList）](#11----arraylist-)
-    + [1.2 链表（LinkedList）](#12----linkedlist-)
-    + [1.3 列表总结](#13-----)
-  * [2. 栈（Stack）](#2---stack-)
-    + [2.1 栈的定义](#21-----)
-    + [2.2 使用 ArrayList 实现栈](#22----arraylist----)
-    + [2.3 使用 LinkedList 实现栈](#23----linkedlist----)
-    + [2.4 栈的总结](#24-----)
-  * [3. 队列（Queue）](#3----queue-)
-    + [3.0 队列的定义](#30------)
-    + [3.1 使用 ArrayList 实现队列](#31----arraylist-----)
-    + [3.2 克服 ArrayQueue 的弊端](#32----arrayqueue----)
-    + [3.3 使用 LinkedList 实现队列](#33----linkedlist-----)
-    + [3.4 克服 LinkedQueue 的弊端](#34----linkedqueue----)
-    + [3.5 队列总结](#35-----)
+- [1. 列表（List）](#1.-列表（List）)
+  - [1.1 数组（ArrayList）](#1.1-数组（ArrayList）)
+  - [1.2 链表（LinkedList）](#1.2-链表（LinkedList）)
+  - [1.3 列表总结](#1.3-列表总结)
+- [2. 栈（Stack）](#2.-栈（Stack）)
+  - [2.1 栈的定义](#2.1-栈的定义)
+  - [2.2 使用 ArrayList 实现栈](#2.2-使用-ArrayList-实现栈)
+  - [2.3 使用 LinkedList 实现栈](#2.3-使用-LinkedList-实现栈)
+  - [2.4 栈的总结](#2.4-栈的总结)
+- [3. 队列（Queue）](#3.-队列（Queue）)
+  - [3.1 队列的定义](#3.1-队列的定义)
+  - [3.2 使用 ArrayList 实现队列](#3.2-使用-ArrayList-实现队列)
+  - [3.3 克服 ArrayQueue 的弊端](#3.3-克服-ArrayQueue-的弊端)
+  - [3.4 使用 LinkedList 实现队列](#3.4-使用-LinkedList-实现队列)
+  - [3.5 克服 LinkedQueue 的弊端](#3.5-克服-LinkedQueue-的弊端)
+  - [3.6 队列总结](#3.6-队列总结)
 
 ## 1. 列表（List）
 
@@ -486,7 +485,7 @@ public class LinkedStack<T: Equatable>: Stack {
 
 ## 3. 队列（Queue）
 
-### 3.0 队列的定义
+### 3.1 队列的定义
 
 > 队列（queue），是先进先出（FIFO, First-In-First-Out）的线性表。在具体应用中通常用链表或者数组来实现。队列只允许在后端（称为rear）进行插入操作，在前端（称为front）进行删除操作。
 
@@ -509,7 +508,7 @@ public protocol Queue {
 
 ```
 
-### 3.1 使用 ArrayList 实现队列
+### 3.2 使用 ArrayList 实现队列
 
 用 ArrayList 实现队列和实现栈相似：
 
@@ -551,7 +550,7 @@ public class ArrayQueue<T: Equatable>: Queue {
 
 当我们使用 ArrayList 实现 Stack 时，可以将 push 和 pop 操作放到数组尾部以达到最好的性能。而 Queue 则必须要在两端操作，性能问题已无法避免。把 enqueue 操作放在数组尾部，复杂度为 O(1)；dequeue 操作放在头部，复杂度为 O(N)。
 
-### 3.2 克服 ArrayQueue 的弊端
+### 3.3 克服 ArrayQueue 的弊端
 
 当然还是有办法优化的，这就是双端队列。相比于每次出队都要把后面的元素依次向前移位，双端队列使用两个游标来表示队列头和队列尾，入队的时候将队尾游标后移，出队时将队首游标后移即可。经多数次后移之后，队尾游标有可能出现在队首游标前方，整个数组形成一个环状。
 
@@ -651,7 +650,7 @@ extension CircularQueue {
 
 这样实现的双端列表，入队和出队的复杂度都是 O(N)。
 
-### 3.3 使用 LinkedList 实现队列
+### 3.4 使用 LinkedList 实现队列
 
 用 LinkedList 来实现队列：
 
@@ -689,7 +688,7 @@ class LinkedQueue<T: Equatable>: Queue {
 
 操作简单，不再赘述。弊端和 ArrayQueue 相同。
 
-### 3.4 克服 LinkedQueue 的弊端
+### 3.5 克服 LinkedQueue 的弊端
 
 上面的实现，麻烦在出队时要从链表尾部删除结点，是 O(N) 的操作。要优化也很容易，只要在链表上除 head 之外，再多记录一个 tail 结点，出队时直接从 tail 开始操作就好了。
 
@@ -748,7 +747,7 @@ class DualLinkedQueue<T: Equatable>: Queue {
 }
 ```
 
-### 3.5 队列总结
+### 3.6 队列总结
 
 | Time Complexity |   Access   |   Search   |  Insertion  |  Deletion  |
 |:----------------|:----------:|:----------:|:-----------:|:----------:|
